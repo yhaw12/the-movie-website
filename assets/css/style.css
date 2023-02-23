@@ -1,0 +1,354 @@
+/*-----------------------------------*\
+  #style.css
+\*-----------------------------------*/
+
+/**
+ * copyright 2023 codewithsadee
+ */
+
+
+
+
+
+/*-----------------------------------*\
+  #CUSTOM PROPERTY
+\*-----------------------------------*/
+
+:root{
+   /* Background color */
+
+--background: rgb(18, 27, 46);
+--banner-background: hsla(250, 6%, 20%, 1);
+--white-alpha-20: hsla(0, 0%, 100%, 0.2);
+--on-background: hsla(220, 100%, 95%, 1);
+--on-surface: hsla(250, 100%, 95%, 1);
+--on-surface-variant: hsla(250, 1%, 44%, 1);
+--primary: hsla(349, 100%, 43%, 1);
+--primary-variant: hsla(349, 69%, 51%, 1);
+--rating-color: hsla(44, 100%, 49%, 1);
+--surface: hsla(250, 13%, 11%, 1);
+--text-color: hsla(250, 2%, 59%, 1);
+--white: hsla(0, 0%, 100%, 1);
+
+ /* Gradient color */
+
+--banner-overlay: 90deg, hsl(220, 17%, 7%) 0%, hsla(220, 17%, 7%, 0.5) 100%;
+--bottom-overlay: 180deg, hsla(250, 13%, 11%, 0), hsla(250, 13%, 11%, 1);
+
+ /* Typography */
+--dm-sans-font-type: 'DM Sans', sans-serif;
+
+--heading-font: 4rem;
+--title-font-lg: 2.6rem;
+--title-font: 2rem;
+--body-font: 1.8rem;
+--button-font: 1.5rem;
+--label-font: 1.4rem;
+
+--weight-bold: 700;
+
+/* Shadow */
+
+--shadow-1: 0 1px 4px hsla(0, 0%, 0%, 0.75);
+--shadow-2: 0 2px 4px hsla(350, 100%, 43%, 0.3);
+
+ /* Border Radius */
+
+--radius-4: 4px;
+--radius-8: 8px;
+--radius-16: 16px;
+--radius-24: 24px;
+--radius-36: 36px;
+
+/* Transition */
+
+--short-transition: 250ms ease;
+--long-transition: 500ms ease;
+
+/* padding */
+--section-padding: 1rem 5%;
+}
+
+
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: var(--dm-sans-font-type);
+}
+
+html::-webkit-scrollbar{
+  scroll-behavior: smooth;
+  border-radius: 2rem;
+  background-color: var(--surface);
+}
+
+html::-webkit-scrollbar-thumb{
+  width: .5rem;
+  padding-top: 5rem;
+}
+
+body{
+  /* position: relative; */
+  background-color: var(--background);
+}
+
+h1,h2,h3,h5, span, p {
+  color: var(--text-color);
+}
+.text{
+  text-align: center;
+}
+span{
+  margin: 1rem 0;
+}
+.image{
+  width: 100%;
+}
+
+header{
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--section-padding);
+  border-bottom: 1px solid var(--white-alpha-20) ;
+}
+
+
+/* search input seaction */
+
+header .searchbar{
+  width: 300px;
+  height: 40px;
+  padding: 0.5rem;
+  line-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: var(--radius-8);
+  background-color: var(--white-alpha-20);
+}
+.searchbar img{
+  width: 1.5rem;
+  margin-right: .5rem;
+  cursor: pointer;
+  color: var(--on-surface-variant);
+}
+
+.searchbar input{
+  outline: none;
+  border: none;
+  background: none;
+  color: var(--on-surface-variant);
+  caret-color: var(--on-surface-variant);
+}
+
+.searchbar input::placeholder{
+  color: var(--on-surface-variant);
+}
+
+/* menu bar tab section */
+
+header .icons{
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+}
+
+header .icons .menubar{
+  position: absolute;
+  top: 50;
+  left: 50;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  z-index: 2;
+  transition: var(--short-transition);
+}
+header .icons .closebtn{
+  position: absolute;
+  top: 50;
+  left: 50;
+  width: 50px;
+  height: 50px;
+  display: none;
+  cursor: pointer;
+  z-index: 1;
+}
+
+/* aside section */
+aside{
+  width: 200px;
+  height: 100vh;
+  position: fixed; 
+  left: 0;
+  padding: 2rem;
+  border-right: 1px solid var(--white-alpha-20);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+aside .top-section, aside .bottom-section{
+  margin-bottom: 2rem;
+}
+aside .top-section ul, aside .bottom-section ul{
+  margin-top: 1rem;
+}
+aside .content li{
+  margin: .2rem 0;
+}
+aside:has(a, span) {
+  font-size: 1.2rem;
+}
+aside span{
+  color: var(--on-surface);
+}
+aside a{
+  color:var(--on-surface-variant)
+}
+aside .moviedblogo img{
+  width: 8rem;
+  height: 2rem;
+  margin-bottom: 3rem;
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*-----------------------------------*\
+  #RESET
+\*-----------------------------------*/
+
+
+
+
+
+/*-----------------------------------*\
+  #REUSED STYLE
+\*-----------------------------------*/
+
+
+
+
+
+/*-----------------------------------*\
+  #HEADER
+\*-----------------------------------*/
+
+
+
+
+
+/*-----------------------------------*\
+  #SIDEBAR
+\*-----------------------------------*/
+
+
+
+
+
+/*-----------------------------------*\
+  #HOME PAGE
+\*-----------------------------------*/
+
+
+
+
+
+/*-----------------------------------*\
+  #DETAIL PAGE
+\*-----------------------------------*/
+
+
+
+
+
+/*-----------------------------------*\
+  #MOVIE LIST PAGE
+\*-----------------------------------*/
+
+
+
+
+
+/*-----------------------------------*\
+  #SEARCH MODAL
+\*-----------------------------------*/
+
+
+
+
+
+/*-----------------------------------*\
+  #MEDIA QUERIES
+\*-----------------------------------*/
