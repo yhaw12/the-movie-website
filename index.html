@@ -24,59 +24,82 @@
 </head>
 <body>
     <header>
-        <div class="image"><img src="assets/images/logo.png" alt="logo"></div>
-
-        <div class="searchbar">
-            <img src="assets/images/search.png">
-            <input type="text" placeholder="search any movies">
-        </div>
 
         <div class="icons">
             <img class="menubar" src="assets/images/menu.png" >
             <img class="closebtn" src="assets/images/menu-close.png">
         </div>
 
+        <div class="image"><img src="assets/images/logo.png" alt="logo"></div>
 
+        <div class="searchbar">
+            <img  class="search-image" src="assets/images/search.png">
+            <input class="input" type="text" placeholder="search any movies">
+        </div>
     </header>
 
-
-    <!-- SideBar Section -->
-    <aside>
-        <div class="content">
-            <div class="top-section">
-                <span>Genre</span>
+    <section class="main-body"> 
+        <!-- SideBar Section -->
+        <aside>
+            <div class="content">
+                <div class="top-section">
+                    <span>Genre</span>
+                    <ul>
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Comedy</a></li>
+                        <li><a href="#">Horror</a></li>
+                        <li><a href="#">Drama</a></li>
+                        <li><a href="#">Fantansy</a></li>
+                        <li><a href="#">History</a></li>
+                        <li><a href="#">Triller</a></li>
+                        <li><a href="#">Romance</a></li>
+                        <li><a href="#">Family</a></li>
+                        <li><a href="#">Crime</a></li>
+                        <li><a href="#">Animation</a></li>
+                        <li><a href="#">Documentary</a></li>
+                        <li><a href="#">Adventure</a></li>
+                    </ul>
+                </div>
+            <div class="bottom-section">
+                <span>Language</span>
                 <ul>
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Comedy</a></li>
-                    <li><a href="#">Horror</a></li>
-                    <li><a href="#">Drama</a></li>
-                    <li><a href="#">Fantansy</a></li>
-                    <li><a href="#">History</a></li>
-                    <li><a href="#">Triller</a></li>
-                    <li><a href="#">Romance</a></li>
-                    <li><a href="#">Family</a></li>
-                    <li><a href="#">Crime</a></li>
-                    <li><a href="#">Animation</a></li>
-                    <li><a href="#">Documentary</a></li>
-                    <li><a href="#">Adventure</a></li>
+                    <li><a href="#">English</a></li>
+                    <li><a href="#">Hindi</a></li>
+                    <li><a href="#">Bengali</a></li>
                 </ul>
             </div>
-        <div class="bottom-section">
-            <span>Language</span>
-            <ul>
-                <li><a href="#">English</a></li>
-                <li><a href="#">Hindi</a></li>
-                <li><a href="#">Bengali</a></li>
-            </ul>
-        </div>
-
-        <div class="moviedblogo">
-            <div class="image">
-                <img src="assets/images/tmdb-logo.png">
+    
+            <div class="copyRight">
+               <h5> All Rights Reserved &copy; <span class="date">2025</span></h5>
             </div>
-        </div> 
-        
-    </aside>
+    
+            <div class="moviedblogo">
+                <div class="image">
+                    <img src="assets/images/tmdb-logo.png">
+                </div>
+            </div> 
+        </aside>
+        <!-- main movie section -->
+        <main>
+            <div class="top-banner">
+                <div class="container">
+                    <div class="bg-image">
+                        <img src="assets/images/slider-banner.jpg"/>
+                    </div>
+                    <div class="sm-image">
+                        <img src="assets/images/slider-control.jpg"/>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-section">
+                <!-- <div class="text">
+                    <span>top trending movies</span>
+                </div> -->
+
+            </div>
+        </main>
+    </section>
+   
     
 
     <script src="assets/js/index.js"></script>
