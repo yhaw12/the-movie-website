@@ -32,3 +32,14 @@ let date = document.querySelector('.date');
 let footerDate = new Date().getFullYear();
 
 date.textContent = footerDate;
+
+
+
+// fetch the api detail
+
+fetch('https://api.themoviedb.org/3/configuration?api_key=6f88efd677e821e5e63075bf79e8eb54')
+    .then(res => res.json())
+    .then(completedata = map(values)
+    )
+
+
