@@ -1,6 +1,4 @@
 // header menu bar
-
-
 let menuBar = document.querySelector('.menubar');
 let closeBtn = document.querySelector('.closebtn');
 
@@ -28,7 +26,6 @@ searchImage.addEventListener('click', ()=>{
 // sidebar copyright
 
 let date = document.querySelector('.date');
-
 let footerDate = new Date().getFullYear();
 
 date.textContent = footerDate;
@@ -37,9 +34,12 @@ date.textContent = footerDate;
 
 // fetch the api detail
 
+// fetch('https://api.themoviedb.org/3/configuration?api_key=6f88efd677e821e5e63075bf79e8eb54')
+//     .then(res => res.json())
+//     .then(completedata = map(values)
+//     )
+
+
 fetch('https://api.themoviedb.org/3/configuration?api_key=6f88efd677e821e5e63075bf79e8eb54')
-    .then(res => res.json())
-    .then(completedata = map(values)
-    )
-
-
+.then(data => data.json())
+.then(data=>console.log(data))

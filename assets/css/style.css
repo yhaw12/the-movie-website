@@ -215,7 +215,7 @@ aside .top-section ul, aside .bottom-section ul{
   margin-top: 1rem;
 }
 aside .content li{
-  margin: .2rem 0;
+  margin: .5rem 0;
 }
 aside:has(a, span) {
   font-size: 1.2rem;
@@ -414,7 +414,12 @@ section .top-text h2{
 
 .details-page .top-section .right-side{
   width: 50%;
+  height: 100%;
   padding: 2rem;
+}
+.details-page .top-section .right-side h2{
+  font-size: var(--title-font);
+  text-transform: capitalize;
 }
 
 
