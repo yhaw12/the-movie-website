@@ -1,35 +1,121 @@
-
-// {"images":{"base_url":"http://image.tmdb.org/t/p/","secure_base_url":"https://image.tmdb.org/t/p/","backdrop_sizes":["w300","w780","w1280","original"],"logo_sizes":["w45","w92","w154","w185","w300","w500","original"],"poster_sizes":["w92","w154","w185","w342","w500","w780","original"],"profile_sizes":["w45","w185","h632","original"],"still_sizes":["w92","w185","w300","original"]},"change_keys":["adult","air_date","also_known_as","alternative_titles","biography","birthday","budget","cast","certifications","character_names","created_by","crew","deathday","episode","episode_number","episode_run_time","freebase_id","freebase_mid","general","genres","guest_stars","homepage","images","imdb_id","languages","name","network","origin_country","original_name","original_title","overview","parts","place_of_birth","plot_keywords","production_code","production_companies","production_countries","releases","revenue","runtime","season","season_number","season_regular","spoken_languages","status","tagline","title","translations","tvdb_id","tvrage_id","type","video","videos"]}
-
-// fetch('https://api.themoviedb.org/3/configuration?api_key=6f88efd677e821e5e63075bf79e8eb54')
-//     .then(res => res.json())
-//     .then(completedata =>{
-//         let data = '';
-//         completedata.map(values){
-//             data+= ``
-//         }
-        
-//     }
-//     )
+const tpTrending = document.querySelector('.popular'); 
+const mdTrending = document.querySelector('.trendy'); 
+const bdTrending = document.querySelector('.upcoming-movies'); 
 
 
-    const options = {
-        method: 'GET',
-        headers: {
-          accept: 'application/json',
-          Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2Zjg4ZWZkNjc3ZTgyMWU1ZTYzMDc1YmY3OWU4ZWI1NCIsInN1YiI6IjYzZDg2MjY3MTJiMTBlMDA5M2U4ZmMwMSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.MTD7ZVryJwr3RlLfQV-DW8gLrrig1GOgsVwbvkd092M'
-        }
-      };
+const options = {
+    method: 'GET',
+      headers: {
+      accept: 'application/json',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2Zjg4ZWZkNjc3ZTgyMWU1ZTYzMDc1YmY3OWU4ZWI1NCIsInN1YiI6IjYzZDg2MjY3MTJiMTBlMDA5M2U4ZmMwMSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.MTD7ZVryJwr3RlLfQV-DW8gLrrig1GOgsVwbvkd092M'
+    }
+};
       
+
+      // TOP RATED MOVIES
       fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', options)
         .then(response => response.json())
-        .then(response =>{
-            console.log(response)
+        .then(data =>{
+          // console.log(data)
+            let movieData = '';
+
+            data.results.forEach((value, index)=>{
+              movieData+= `
+                   <div class="card key=${index}  ">
+                      <div class="card-box">
+                        <div class="image">
+                            <img src="http://image.tmdb.org/t/p/w500/${value.poster_path}">
+                        </div>
+                        <h3>${value.title}</h3>
+                        <div class="ratings">
+                          <div class="left">
+                            <img src="assets/images/star.png">
+                            <span>${value.vote_average}</span>
+                        </div>
+
+                        <div class="right">
+                            <span>${value.vote_count}</span>
+                        </div> 
+                    </div>
+                     
+                  </div>`
+            })
+            tpTrending.innerHTML = movieData; 
         })
         .catch(err => console.error(err));
 
-          
+
+        // WEEKLY TRENDING
+        fetch('https://api.themoviedb.org/3/trending/movie/week?language=en-US&page=1', options)
+          .then(response => response.json())
+          .then(data =>{
+            let trendyMovie ='';
+
+          data.results.forEach((trendy, index)=>{
+            trendyMovie+= `
+                  <div class="card key=${index}  ">
+                    <div class="card-box">
+                      <div class="image">
+                          <img src="http://image.tmdb.org/t/p/w500/${trendy.poster_path}">
+                      </div>
+                      <h3>${trendy.title}</h3>
+                      <div class="ratings">
+                        <div class="left">
+                          <img src="assets/images/star.png">
+                          <span>${trendy.vote_average}</span>
+                      </div>
+
+                      <div class="right">
+                          <span>${trendy.vote_count}</span>
+                      </div> 
+                  </div>
+                    
+                </div>`
+          })
+
+          mdTrending.innerHTML = trendyMovie; 
+      
+          })
+          .catch(err => console.error(err));
+
+         
+
+        // UPCOMING MOVIES
         fetch('https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1', options)
          .then(response => response.json())
+            .then(data=>{
+
+               let upcomingMovie ='';
+
+               data.results.forEach((up, index)=>{
+                upcomingMovie+=`
+                <div class="card key=${index}  ">
+                   <div class="card-box">
+                     <div class="image">
+                         <img src="http://image.tmdb.org/t/p/w500/${up.poster_path}">
+                     </div>
+                     <h3>${up.title}</h3>
+                     <div class="ratings">
+                       <div class="left">
+                         <img src="assets/images/star.png">
+                         <span>${up.vote_average}</span>
+                     </div>
+
+                     <div class="right">
+                         <span>${up.vote_count}</span>
+                     </div> 
+                 </div>
+                  
+               </div>`
+               })
+
+               bdTrending.innerHTML = upcomingMovie; 
+
+            })
+            .catch(err => console.error(err));
+
+
+            fetch('https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', options)
+            .then(response => response.json())
             .then(response => console.log(response))
             .catch(err => console.error(err));

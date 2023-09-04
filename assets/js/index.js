@@ -40,6 +40,6 @@ date.textContent = footerDate;
 //     )
 
 
-fetch('https://api.themoviedb.org/3/configuration?api_key=6f88efd677e821e5e63075bf79e8eb54')
-.then(data => data.json())
-.then(data=>console.log(data))
+// fetch('https://api.themoviedb.org/3/configuration?api_key=6f88efd677e821e5e63075bf79e8eb54')
+// .then(data => data.json())
+// .then(data=>console.log(data))
