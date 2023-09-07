@@ -257,21 +257,31 @@ main .top-banner .bg-image{
   height: 500px;
   position: relative;
 }
-main .top-banner .sm-image{
-  /* width: 300px;
-  border: 2px solid red; */
-  position: absolute;
-  bottom: 10px;
-  right: 0;
-  cursor: pointer;
-  margin-right: 1rem;
-}
 main .top-banner .popular-movies .bg-image img{
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: var(--radius-24);
 }
+
+main .top-banner .sm-image{
+  width: 30rem;
+
+  display: flex;
+  align-items: center;
+  gap: .2rem;
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+  cursor: pointer;
+  margin-right: 1rem;
+  overflow-x: scroll;
+}
+
+.sm-image::-webkit-scrollbar{
+  display: none;
+}
+
 main .top-banner .popular-movies .sm-image img{
   width: 5rem;
   cursor: pointer;
